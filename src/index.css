@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navy-text-shadow {
+    text-shadow: 0px 4px 4px #00000053;
+  }
+  .navyactive-text-shadow{
+    text-shadow: 0px 4px 4px #00000029;
+  }
+  .sticky { 
+    position: sticky !important;
+  }
+  .fixed { 
+    position: fixed !important;
+  }

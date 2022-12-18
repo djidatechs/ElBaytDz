@@ -8,7 +8,7 @@ import Client from "./Routes/Client";
 
 export default function App() {
   useEffect(() => {
-    document.title = 'ElbaytDz 2022';
+    document.title = 'ElbaytDz 2023';
   }, []);
   return (
     <Routes>

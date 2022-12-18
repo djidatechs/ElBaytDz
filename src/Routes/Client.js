@@ -26,7 +26,7 @@ function Client(props) {
 
             <Route element={<Auth/>}>
 
-                <Route path="catalog">
+                <Route path="annonces">
                 <Route index element={<Catalog />} />
                 <Route path=":annonceId" element={<Annonce />} />
                 </Route>
