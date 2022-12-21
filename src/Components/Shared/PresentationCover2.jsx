@@ -12,6 +12,8 @@ function PresentationCover({Image="presentation", ImageCustumize="", Title }) {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
+        const position = window.pageYOffset;
+        ImageRef.current.style.opacity = Math.min(1,1- (position / 500))
     
         return () => {
             window.removeEventListener('scroll', handleScroll);

@@ -7,7 +7,7 @@ function ClientContainter({children  , LayoutBackground="" , Custumize="",Layout
 
     const RootContainer = LayoutBackgroundOverRide
                         ? SafeString(LayoutBackgroundOverRide)
-                        :`relative ${SafeString(LayoutBackground)}`
+                        :`p-relative ${SafeString(LayoutBackground)}`
 
 
 

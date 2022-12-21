@@ -2,11 +2,8 @@ import React from 'react';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import PresentationCover from '../../Components/Shared/PresentationCover1';
 import DecouvrireIcon from '../../Assets/DecouvrireIcon.svg'
-
-
 import AnnoncesSpace from '../../Components/Spaces/AnnonceSpace/AnnoncesSpace';
 import Inputer from '../../Components/Shared/Inputer';
-import ContactFooter from '../../Components/Shared/ContactFooter';
 
 function Home(props) {
     return (
@@ -34,7 +31,7 @@ function Home(props) {
             </ClientContainter>
 
             <ClientContainter LayoutBackground='z-0' Custumize='py-6 text-center'>
-                <button className='bg-sky text-white font-extrabold rounded-xl p-3 text-lg '>CONSULTER TOUTES LES ANNONCES</button>
+                <button className='bg-sky text-white font-extrabold rounded-xl p-3 text-lg hover:text-sun hover:bg-night transition duration-1000 ease-out '>CONSULTER TOUTES LES ANNONCES</button>
             </ClientContainter>
         </div>
     );

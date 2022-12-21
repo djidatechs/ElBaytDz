@@ -23,10 +23,10 @@ function Footer(props) {
                         <Link>Conditions d'utilisation</Link>
                     </div>
                 </div>
+                <img src={GoUpIcon} className='text-white cursor-pointer absolute  right-20 bottom-8'/>
             </footer>
-            <img src={GoUpIcon} className='text-white cursor-pointer absolute  right-20 bottom-8'/>
         </ClientContainter>
-        <ClientContainter LayoutBackground='bg-[#09375D]' >
+        <ClientContainter LayoutBackground='bg-night' >
             <footer className='text-center font-bold text-white text-lg p-4'>
                 © 2023 ELBAYT DZ. Tous droits réservés.  Le site immobilier de l'Algérie
             </footer>

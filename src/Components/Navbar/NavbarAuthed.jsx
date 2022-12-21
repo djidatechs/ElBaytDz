@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../Assets/Logo.svg'
 
+
 import Dropdown from './Dropdown';
 
 import Navigator from './Navigator';
@@ -8,7 +9,7 @@ import UserActions from './UserActions';
 
 function NavbarAuthed(props) {
     return (
-        <div className="navbar p-3 z-50">
+        <div className="navbar p-3 h-20 z-50">
 
             <div className="navbar-start">
                 
@@ -23,7 +24,10 @@ function NavbarAuthed(props) {
                 <div className='hidden lg:flex space-x-5'>
                 <UserActions/>
                 </div>
-                <div className='lg:hidden'><Dropdown/></div>
+                <div className='lg:hidden '>
+                    <Dropdown/>
+                </div>
+                
             </div>
             
         </div>

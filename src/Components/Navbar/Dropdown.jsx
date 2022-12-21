@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Dropdown(props) {
     return (
-        <div className="dropdown dropdown-left  dropdown-hover">
+        <div className="dropdown dropdown-left inline dropdown-hover">
             <label tabIndex={0} className=" text-white lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AnnonceCard from './AnnonceCard';
 
-function AnnoncesSpace({DefaultFetch="" , grid=false}) {
+function AnnoncesSpace({DefaultFetch="" , }) {
     useEffect(()=>{},[])
     
     return (
