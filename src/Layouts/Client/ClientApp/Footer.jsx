@@ -23,7 +23,7 @@ function Footer(props) {
                         <Link>Conditions d'utilisation</Link>
                     </div>
                 </div>
-                <img src={GoUpIcon} className='text-white cursor-pointer absolute  right-20 bottom-8'/>
+                <img onClick={()=>{window.scrollTo({top:0 , behavior: 'smooth'})}} src={GoUpIcon} className='text-white cursor-pointer absolute  right-20 bottom-8'/>
             </footer>
         </ClientContainter>
         <ClientContainter LayoutBackground='bg-night' >

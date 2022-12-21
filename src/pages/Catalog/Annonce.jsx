@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import BreadCrump from '../../Components/Annonce/BreadCrump';
 import illustration from '../../Assets/illustration.png'
@@ -7,6 +7,9 @@ import FavHeart from '../../Assets/FavHeart.svg'
 import DescIcon from '../../Assets/DescIcon.svg'
 
 function Catalog(props) {
+    useEffect(()=>{
+        window.scrollTo({top:0 , behavior: 'smooth'})
+    },[])
     return (
         
         <div>

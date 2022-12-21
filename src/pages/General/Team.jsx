@@ -1,6 +1,9 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
 
-function team(props) {
+function Team(props) {
+    useEffect(()=>{
+        window.scrollTo({top:0 , behavior: 'smooth'})
+    },[])
     return (
         <div>
             Team 
@@ -8,4 +11,4 @@ function team(props) {
     );
 }
 
-export default team;
+export default Team;

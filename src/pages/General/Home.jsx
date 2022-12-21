@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import PresentationCover from '../../Components/Shared/PresentationCover1';
 import DecouvrireIcon from '../../Assets/DecouvrireIcon.svg'
@@ -6,6 +6,9 @@ import AnnoncesSpace from '../../Components/Spaces/AnnonceSpace/AnnoncesSpace';
 import Inputer from '../../Components/Shared/Inputer';
 
 function Home(props) {
+    useEffect(()=>{
+        window.scrollTo({top:0 , behavior: 'smooth'})
+    },[])
     return (
         <div className= ''>
             

@@ -14,7 +14,7 @@ function AnnonceCard({ key="" , Category , Type , Surface , Desc , Price , Image
             <p>très jolie f3 au rez-de-chaussée surélevé près de toutes commodités poste . université. transport a 5 minutes de la plage à pied...</p>
             <Link to={"/annonces/"+key} className=" text-night hover:rounded-xl hover:text-sun hover:underline">En savoir plus</Link>
             <div className="card-actions justify-end">
-            <button className="bg-sun p-3 text-white font-bold rounded-xl">Contactez</button>
+            <Link to={"./1"} className="bg-sun p-3 text-white font-bold rounded-xl">Contactez</Link>
             </div>
         </div>
             <div className={'absolute bg-night p-3 text-white right-0 rounded-bl-xl text-xl text-center font-bold w-1/2 '+(side?"lg:w-1/3":"")}>19 000 00 DA</div>
