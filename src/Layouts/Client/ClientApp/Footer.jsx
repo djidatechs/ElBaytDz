@@ -9,7 +9,7 @@ function Footer(props) {
     return (
         <>
         <ClientContainter LayoutBackground='z-0' Custumize='py-6 text-center'>
-                <ContactFooter/>
+            <ContactFooter/>
             </ClientContainter>
         <ClientContainter LayoutBackground='bg-[#104A7A]' Custumize='' >
 
@@ -23,7 +23,7 @@ function Footer(props) {
                         <Link>Conditions d'utilisation</Link>
                     </div>
                 </div>
-                <img onClick={()=>{window.scrollTo({top:0 , behavior: 'smooth'})}} src={GoUpIcon} className='text-white cursor-pointer absolute  right-20 bottom-8'/>
+                <img onClick={()=>{window.scrollTo({top:0 , behavior: 'smooth'})}} src={GoUpIcon} className='text-white cursor-pointer absolute  right-2 bottom-8'/>
             </footer>
         </ClientContainter>
         <ClientContainter LayoutBackground='bg-night' >

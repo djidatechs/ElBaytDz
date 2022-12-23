@@ -13,7 +13,9 @@ function Dropdown(props) {
                 <li><Link to={"/annonces"}>Annonces</Link></li>
                 <li><Link to={"/aboutus"}>A propos</Link></li>
                 <div className="divider text-white bg-sky rounded-xl mx-2 p-4">Compte</div>
-                <li><Link>Profile</Link></li>
+                <li><Link to={"/profile"} >Profile</Link></li>
+                <li><Link to={"/profile/favoris"} >Mes favoris</Link></li>
+                <li><Link to={"/profile/offers"} >Mes offers</Link></li>
                 <li><Link>Logout</Link></li>
             </ul>
         </div>

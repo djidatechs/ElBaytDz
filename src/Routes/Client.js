@@ -9,8 +9,10 @@ import Catalog from "../pages/Catalog/Catalog";
 import AboutUs from "../pages/General/AboutUs";
 import Home from "../pages/General/Home";
 import Team from "../pages/General/Team";
-import Activites from "../pages/Profile/Activites";
 import Profile from "../pages/Profile/Profile";
+import ProfileLayout from '../Layouts/Client/Profile/ProfileLayout';
+import Favoris from '../pages/Profile/Favoris';
+import Offers from '../pages/Profile/Offers';
 
 
 
@@ -31,9 +33,10 @@ function Client(props) {
                 <Route path=":annonceId" element={<Annonce />} />
                 </Route>
                 
-                <Route path="profile">
+                <Route path="profile" element={<ProfileLayout/>}>
                 <Route index element={<Profile />} />
-                <Route path="activities" element={<Activites />} />
+                <Route path="favoris" element={<Favoris />} />
+                <Route path="offers" element={<Offers />} />
                 </Route>
             </Route>
 

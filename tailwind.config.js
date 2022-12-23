@@ -8,8 +8,8 @@ module.exports = {
       screens:{
         "3xl":"1792px",
         "onlymobile" : {min:"0px", max : "639px"},
-        "untilLg" : {min:"0px", max : "1024px"},
-        "untilMd" : {min:"0px", max : "768px"},
+        "untilLg" : {min:"0px", max : "1023px"},
+        "untilMd" : {min:"0px", max : "767px"},
       },
       colors:{
         "night" : "#003554",

@@ -1,8 +1,10 @@
 import React from 'react';
 import AccountIcon from '../../Assets/AccountIcon.svg'
 import LogIcon from '../../Assets/LogIcon.svg'
+import { useNavigate } from 'react-router-dom';
 
 function UserActions(props) {
+    const navigate = useNavigate();
     const fakeAuth = true ; 
     if (fakeAuth === false) return (
         <>
@@ -13,7 +15,7 @@ function UserActions(props) {
     )
     return (
         <>
-            <img src={AccountIcon} className="h-5" alt='icon'/>
+            <img onClick={()=>{navigate("/profile")}} src={AccountIcon} className="h-5 cursor-pointer" alt='icon'/>
             <img src={LogIcon} className="h-5" alt='icon'/>
         </>
     );
