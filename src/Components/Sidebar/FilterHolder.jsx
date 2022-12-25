@@ -2,9 +2,9 @@ import React from 'react';
 
 function FilterHolder({title , subtitle , children}) {
     return (
-        <div>
-            <h1 className='text-night font-bold '>{title}</h1>
-            <h6 className='text-night text-xs mb-4'>{subtitle}</h6>
+        <div className='my-6'>
+            <h1 className='text-left text-xl text-night font-bold '>{title}</h1>
+            <h6 className='text-left text-sm text-night mb-4'>{subtitle}</h6>
            {children}
         </div>
     );

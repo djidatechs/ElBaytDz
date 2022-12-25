@@ -13,6 +13,7 @@ module.exports = {
       },
       colors:{
         "night" : "#003554",
+        "primary" : "#003554",
         "sky" : "#157BF6",
         "sun" : "#FFC100" ,
         "old" : "#D9B227"

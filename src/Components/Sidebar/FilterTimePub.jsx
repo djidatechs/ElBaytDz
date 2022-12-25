@@ -9,12 +9,12 @@ function FilterTimePub(props) {
             <div className='space-y-5'>
                 <div className='space-y-2'>
                 <h3>1ère Date</h3>
-                <input className=' w-[80%]' type={'date'}/>
+                <input className=' w-[80%] p-2' type={'date'}/>
                 </div>
                 
                 <div className='space-y-2 '>
                 <h3>2eme Date</h3>
-                <input className=' w-[80%]' type={'date'}/>
+                <input className=' w-[80%] p-2' type={'date'}/>
                 </div>
             </div>
 

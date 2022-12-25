@@ -8,9 +8,9 @@ import Model from '../Shared/Model';
 function Sidebar(props) {
     return (
         <Model>
-            <div className=' overflow-y-auto  m-6 pb-6 rounded-xl text-center space-y-10'>
+            <div className=' overflow-y-auto  lg:m-6 pb-6 rounded-xl space-y-10'>
                 <div className='bg-gray-200 text-night font-bold p-2 rounded-xl'>FILTRERS</div>
-                <div className='bg-gray-200 text-night rounded-xl p-2 space-y-8'>
+                <div className='bg-gray-200 text-night rounded-xl p-5 pl-7 pb-10  space-y-8'>
                     <FilterType/>
                     <FilterWilaya/>
                     <FilterCommune/>

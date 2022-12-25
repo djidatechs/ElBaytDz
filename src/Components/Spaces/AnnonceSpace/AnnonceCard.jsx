@@ -5,7 +5,7 @@ import FavHeart from '../../../Assets/FavHeart.svg'
 function AnnonceCard({ key="" , Category , Type , Surface , Desc , Price , Image , side=false  }) {
     return (
 
-        <div className={(side ? "card lg:card-side":"card") + " w-full  relative  rounded-3xl rounded-tr-none  bg-white shadow-xl shadow-slate-500 md:hover:scale-[102%] transition duration-300 ease-out "}>
+        <div className={(side ? "card lg:card-side":"card") + " w-full select-none  relative  rounded-3xl rounded-tr-none  bg-white shadow-xl shadow-slate-500 md:hover:scale-[102%] transition duration-300 ease-out "}>
         <figure className={side ? "untilLg:w-full untilLg:h-full " : 'w-full h-full'}><img src="https://placeimg.com/400/225/arch" alt="Shoes" className={(side ? "overflow-hidden " : "")+'w-full h-full'} /></figure>
         <div className="card-body">
             <h2 className={"card-title font-bold text-3xl text-old "+ (side?"mt-6":"")}>F3 Boumardes</h2>

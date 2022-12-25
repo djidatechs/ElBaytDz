@@ -5,6 +5,7 @@ import ClientLayout from "../Layouts/Client/ClientApp/ClientLayout";
 import Auth from "../pages/Auth/Auth";
 import Signup from "../pages/Auth/Signup";
 import Annonce from "../pages/Catalog/Annonce";
+import NewAnnonce from "../pages/Catalog/NewAnnonce";
 import Catalog from "../pages/Catalog/Catalog";
 import AboutUs from "../pages/General/AboutUs";
 import Home from "../pages/General/Home";
@@ -31,6 +32,7 @@ function Client(props) {
                 <Route path="annonces">
                 <Route index element={<Catalog />} />
                 <Route path=":annonceId" element={<Annonce />} />
+                <Route path="new" element={<NewAnnonce />} />
                 </Route>
                 
                 <Route path="profile" element={<ProfileLayout/>}>
