@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Steps from '../../Components/Annonce/Steps';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import Etape01 from '../../Components/Annonce/Etape01';
@@ -9,6 +9,9 @@ import EtapeCbn from '../../Components/Annonce/EtapeCbn';
 function NewAnnonce(props) {
     const [annonce , setAnnonce] = useState({});
     const [step , setStep] = useState(1);
+    useEffect(()=>{
+        window.scrollTo({top:0 , behavior: 'smooth'})
+    },[])
     
     return (
         <div>

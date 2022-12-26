@@ -2,10 +2,11 @@ import React from 'react';
 import ClientContainter from '../../Containers/ClientContainter';
 import LogoFooter from '../../../Assets/LogoFooter.svg'
 import GoUpIcon from '../../../Assets/GoUpIcon.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ContactFooter from '../../../Components/Shared/ContactFooter';
 
 function Footer(props) {
+    const nav = useNavigate()
     return (
         <>
         <ClientContainter LayoutBackground='z-0' Custumize='py-6 text-center'>
@@ -16,7 +17,7 @@ function Footer(props) {
             <footer className='pt-10 pb-28 relative  '>
                 <div className='md:grid grid-cols-3 md:items-center untilMd:text-center untilMd:space-y-10'>
                     <img src={LogoFooter} alt='footer logo' className='untilMd:mx-auto'/>
-                    <button className=' bg-white text-night font-extrabold rounded-xl p-2 text-lg w-52 lg:w-64 h-12'>Publier une annonce</button>
+                    <button onClick={()=>nav("/annonces/new")}  className=' bg-white text-night font-extrabold rounded-xl p-2 text-lg w-52 lg:w-64 h-12'>Publier une annonce</button >
                     <div className='text-white mx-auto grid grid-cols-1 font-extrabold text-lg space-y-5'>
                         <Link>Qui somme nous ?</Link>
                         <Link>Contactez nous </Link>
