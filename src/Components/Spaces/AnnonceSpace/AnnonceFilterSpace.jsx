@@ -1,6 +1,7 @@
 import React from 'react';
 import AnnonceCard from './AnnonceCard';
 import filtre from '../../../Assets/filtre.svg'
+import Paginator from '../../Shared/Paginator';
 
 function AnnonceFilterSpace(props) {
     return (
@@ -18,6 +19,9 @@ function AnnonceFilterSpace(props) {
                 <AnnonceCard />
                 <AnnonceCard />
             </div>
+             <div className='text-center'>
+                    <Paginator/>
+                </div>
         </div>
     );
 }

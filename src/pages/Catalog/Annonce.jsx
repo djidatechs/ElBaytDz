@@ -14,7 +14,7 @@ function Catalog(props) {
     return (
         
         <div>
-            <BreadCrump/>  {/* Client contained */}
+            <BreadCrump text={"Annonces ❯ F3 Boumardes"}/>  {/* Client contained */}
             <ClientContainter>
                 <div className='lg:flex'>
                     <div className='w-full lg:w-7/12 '>

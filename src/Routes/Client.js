@@ -17,15 +17,16 @@ import Offers from '../pages/Profile/Offers';
 
 
 
+
 function Client(props) {
     return (
        <Routes>
+        <Route path="signup" element={<Signup/>} />
         <Route  element={<ClientLayout/>}>
 
             <Route index element={<Home />} />
             <Route path="aboutus" element={<AboutUs />} />
             <Route path="team" element={<Team/>} />
-            <Route path="signup" element={<Signup/>} />
 
             <Route element={<Auth/>}>
 
@@ -33,6 +34,7 @@ function Client(props) {
                 <Route index element={<Catalog />} />
                 <Route path=":annonceId" element={<Annonce />} />
                 <Route path="new" element={<NewAnnonce />} />
+                
                 </Route>
                 
                 <Route path="profile" element={<ProfileLayout/>}>

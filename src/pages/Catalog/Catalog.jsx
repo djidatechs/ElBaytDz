@@ -3,6 +3,7 @@ import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import PresentationCover2 from '../../Components/Shared/PresentationCover2';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import AnnonceFilterSpace from '../../Components/Spaces/AnnonceSpace/AnnonceFilterSpace';
+import Paginator from '../../Components/Shared/Paginator';
 
 
 function Catalog(props) {

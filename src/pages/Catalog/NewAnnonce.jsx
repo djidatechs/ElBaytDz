@@ -8,7 +8,7 @@ import EtapeCbn from '../../Components/Annonce/EtapeCbn';
 
 function NewAnnonce(props) {
     const [annonce , setAnnonce] = useState({});
-    const [step , setStep] = useState(1);
+    const [step , setStep] = useState(0);
     useEffect(()=>{
         window.scrollTo({top:0 , behavior: 'smooth'})
     },[])
@@ -17,13 +17,13 @@ function NewAnnonce(props) {
         <div>
             <Steps step={step}/>
             {
-                step == 1 
+                step%4 == 0
                 ? <Etape01 setStep={setStep}/>
-                : step == 2 
+                : step%4 == 1
                 ? <Etape02 setStep={setStep}/>
-                : step == 3 
+                : step%4 == 2
                 ? <Etape03 setStep={setStep}/>
-                : step == 4 
+                : step%4 ==3
                 ? <EtapeCbn setStep={setStep}/>
                 : <>Erreur</>
             }

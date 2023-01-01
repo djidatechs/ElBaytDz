@@ -1,9 +1,8 @@
 import React from 'react';
 
-function Inputer(props) {
+function Inputer({mt}) {
     return (
-        <div className="mt-6 ">
-                
+        <div className={mt || "mt-6"}>
             <div className=' text-center items-center '>
             <input type="text" placeholder="Recharcher une annonce" className="input input-bordered  sm:w-2/3 rounded-r-none " />
             <button className="btn m-0 align-bottom bg-night rounded-l-none">

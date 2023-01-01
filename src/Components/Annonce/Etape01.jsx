@@ -6,45 +6,80 @@ function Etape01 ({setStep}) {
     <ClientContainter Custumize='untilMd:text-center '>
         <div className='md:ml-[100px] lg:ml-[200px]'>
 
-        <h1 className='text-3xl text-night font-semibold my-6 '>Type de bien</h1>
+        <h1 className='text-3xl text-night font-semibold my-6 '>Categorie de bien</h1>
 
         <div className='md:grid grid-cols-2 xl:grid-cols-3 gap-12  md:w-2/3  '>
             <div className="form-control">
                 <label className="label cursor-pointer md:w-[200px]">
-                    <span className="label-text  font-bold text-left">Apparetement</span> 
+                    <span className="label-text  font-bold text-left">Vente</span> 
                     <input type="radio" name='radioetape1'  defaultChecked className="checkbox bg-gray-300" />
                     
                 </label>
             </div>
             <div className="form-control">
                 <label className="label cursor-pointer md:w-[200px] ">
-                    <span className="label-text  font-bold">Villas</span> 
+                    <span className="label-text  font-bold">Echange</span> 
                     <input type="radio" name='radioetape1'  className="checkbox bg-gray-300" />
                     
                 </label>
             </div>
             <div className="form-control">
                 <label className="label cursor-pointer md:w-[200px] ">
-                    <span className="label-text  font-bold">Bureau</span> 
+                    <span className="label-text  font-bold">Location pour vacances</span> 
                     <input type="radio" name='radioetape1'  className="checkbox bg-gray-300" />
                     
                 </label>
             </div>
             <div className="form-control">
                 <label className="label cursor-pointer md:w-[200px] ">
-                    <span className="label-text  font-bold">Locaux commerciaux</span> 
+                    <span className="label-text  font-bold">Location</span> 
                     <input type="radio" name='radioetape1'  className="checkbox bg-gray-300" />
+                    
+                </label>
+            </div>
+          
+           
+        </div>
+
+        <h1 className='text-3xl text-night font-semibold my-6 '>Type de bien</h1>
+
+        <div className='md:grid grid-cols-2 xl:grid-cols-3 gap-12  md:w-2/3  '>
+            <div className="form-control">
+                <label className="label cursor-pointer md:w-[200px]">
+                    <span className="label-text  font-bold text-left">Apparetement</span> 
+                    <input type="radio" name='radioetape2'  defaultChecked className="checkbox bg-gray-300" />
+                    
+                </label>
+            </div>
+            <div className="form-control">
+                <label className="label cursor-pointer md:w-[200px] ">
+                    <span className="label-text  font-bold">Terrain Agricole</span> 
+                    <input type="radio" name='radioetape2'  className="checkbox bg-gray-300" />
                     
                 </label>
             </div>
             <div className="form-control">
                 <label className="label cursor-pointer md:w-[200px] ">
                     <span className="label-text  font-bold">Terrains</span> 
-                    <input type="radio" name='radioetape1'  className="checkbox bg-gray-300" />
+                    <input type="radio" name='radioetape2'  className="checkbox bg-gray-300" />
                     
                 </label>
             </div>
-           
+            <div className="form-control">
+                <label className="label cursor-pointer md:w-[200px] ">
+                    <span className="label-text  font-bold">Maisons</span> 
+                    <input type="radio" name='radioetape2'  className="checkbox bg-gray-300" />
+                    
+                </label>
+            </div>
+            <div className="form-control">
+                <label className="label cursor-pointer md:w-[200px] ">
+                    <span className="label-text  font-bold">Bungalow</span> 
+                    <input type="radio" name='radioetape2'  className="checkbox bg-gray-300" />
+                    
+                </label>
+            </div>
+        
         </div>
 
         <h1 className='text-3xl text-night font-semibold my-6'>Emplacement</h1>
