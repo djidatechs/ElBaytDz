@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useElbayt } from '../../../pages/Auth/AuthContext';
 
 function Dropdown(props) {
+    const [user , setUser]= useElbayt();
     return (
         <div className="dropdown dropdown-left inline dropdown-hover">
             <label tabIndex={0} className=" text-white lg:hidden">
@@ -19,7 +21,12 @@ function Dropdown(props) {
                 <li><Link to={"/profile"} >Profile</Link></li>
                 <li><Link to={"/profile/favoris"} >Mes favoris</Link></li>
                 <li><Link to={"/profile/offers"} >Mes offers</Link></li>
-                <li><Link>Logout</Link></li>
+                <li><Link onClick={()=>{
+                    localStorage.removeItem("access_token")
+                    localStorage.removeItem("user_info")
+                    setUser({})
+                    
+                }}>Logout</Link></li>
             </ul>
         </div>
     );

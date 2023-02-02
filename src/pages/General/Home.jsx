@@ -30,7 +30,7 @@ function Home(props) {
 
             <ClientContainter LayoutBackground='z-0 bg-[#D9D9D9]' Custumize=''>
                 <Inputer/>
-                <AnnoncesSpace/>
+                <AnnoncesSpace DefaultFetch='http://localhost:8000/realestate?size=6'/>
             </ClientContainter>
 
             <ClientContainter LayoutBackground='z-0' Custumize='py-6 text-center'>

@@ -54,9 +54,6 @@ function Scrapped(props) {
             <h1 className='font-bold text-xl text-night text-right '>Résultat aprés Scrapping </h1>
         </div>
         <GeneralTable TABLE={TABLE}/>
-        <div className='text-center'>
-            <Paginator/>
-        </div>
        </ClientContainter>
     );
 }

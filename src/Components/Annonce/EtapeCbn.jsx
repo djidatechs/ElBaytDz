@@ -1,11 +1,64 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
+import AnnonceCard from '../Spaces/AnnonceSpace/AnnonceCard';
+import { useElbayt } from '../../pages/Auth/AuthContext';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function EtapeCbn({setStep}) {
+
+
+function EtapeCbn({setStep , context}) {
     useEffect(()=>{window.scrollTo({top:0 , behavior: 'smooth'})},[])
+    const [user, setUser] = useElbayt();
+    const [validator , setValidator] = useState (false)
+    const [annonce , setAnnonce] = context
+    const navigate = useNavigate()
+    
+    useEffect(()=>{
+        console.log(JSON.stringify(annonce))
+        setAnnonce (
+            current=>{
+                current.user= user.email
+                return current
+            }
+        )
+    },[])
+
+    useEffect(()=>{
+        
+        if (validator){
+            const AXIOSPOST = async() => {
+                const respones = await axios.post("http://localhost:8000/realestate/", {...annonce})
+                console.log(respones.data)
+                if (respones.data.id)
+                navigate("/annonces/"+respones.data.id)
+               }
+            AXIOSPOST();            
+        }
+    },[validator])
+
+
     return (
         <ClientContainter>
-            <button className='py-2 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right mt-10' onClick={()=>setStep(c=>c+1)}>New annonce</button>
+            <div className='max-w-96 text-center'>
+                <div className="md:grid grid-cols-3 gap-6 untilMd:space-y-10 py-10">
+                <div></div>
+                <AnnonceCard
+                Category={annonce.category}
+                Desc={annonce.description}
+                Price={annonce.price}
+                Surface={annonce.surface}
+                Type={annonce.property_type}
+                id={0}
+                key='0'
+                
+                />
+                <div></div>
+                </div>
+            </div>
+            <button className={`py-2 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right mt-10 ${validator ? "animate-pulse" : ""}`} onClick={()=>{setValidator(true)}}>{
+                !validator ? "Creer annonce" : "Creation ..."
+            }</button>
         </ClientContainter>
     );
 }

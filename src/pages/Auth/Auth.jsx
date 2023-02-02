@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+
 import { Navigate, Outlet } from 'react-router-dom';
 import fakeauth from '../../FakeAuth/fakeauth';
+import { useElbayt } from './AuthContext';
+
+
+
 
 function Auth(props) {
+    const [user,setUser] = useElbayt();
     
-    console.log({fakeauth});
-    if (fakeauth === false) return <Navigate to={"/signup"} /> //and clear cache
+    
+    
+    if (user.id == undefined) return <Navigate to={"/signup"} /> //and clear cache
     return (
         <div>
             <Outlet/>

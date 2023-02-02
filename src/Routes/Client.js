@@ -14,6 +14,7 @@ import Profile from "../pages/Profile/Profile";
 import ProfileLayout from '../Layouts/Client/Profile/ProfileLayout';
 import Favoris from '../pages/Profile/Favoris';
 import Offers from '../pages/Profile/Offers';
+import { ElbaytFiltersProvider } from '../pages/Catalog/CatalogContext';
 
 
 
@@ -31,7 +32,7 @@ function Client(props) {
             <Route element={<Auth/>}>
 
                 <Route path="annonces">
-                <Route index element={<Catalog />} />
+                <Route index element={ <ElbaytFiltersProvider><Catalog/></ElbaytFiltersProvider>} />
                 <Route path=":annonceId" element={<Annonce />} />
                 <Route path="new" element={<NewAnnonce />} />
                 

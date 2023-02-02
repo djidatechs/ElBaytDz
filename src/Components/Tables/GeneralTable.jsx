@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function GeneralTable({TABLE}) {
+function GeneralTable({TABLE , AN}) {
+  if (!TABLE.ths.length) return <></>
    
     return (
         <div className="overflow-x-auto w-full">
@@ -21,6 +22,46 @@ function GeneralTable({TABLE}) {
           </thead>
           <tbody className='text-xs'>
                 {
+                    ! TABLE.rows.length ? (
+                    <>
+                    <tr >
+                      <th className='rounded-xl bg-[#EEEEEE]'>
+                        <label>
+                          <input type="checkbox" className="checkbox bg-night" />
+                        </label>
+                      </th>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      {AN && <td className='animate-pulse rounded-xl bg-gray-400'></td> }
+
+                      </tr>
+                      <tr >
+                      <th className='rounded-xl bg-[#EEEEEE]'>
+                        <label>
+                          <input type="checkbox" className="checkbox bg-night" />
+                        </label>
+                      </th>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      {AN && <td className='animate-pulse rounded-xl bg-gray-400'></td> }
+                      </tr>
+                      <tr >
+                      <th className='rounded-xl bg-[#EEEEEE]'>
+                        <label>
+                          <input type="checkbox" className="checkbox bg-night" />
+                        </label>
+                      </th>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      <td className='animate-pulse rounded-xl bg-gray-400'></td>
+                      {AN && <td className='animate-pulse rounded-xl bg-gray-400'></td> }
+                      </tr>
+                    </>):(
                     TABLE.rows.map((row,rowIndex)=>{
                         return (
                             <tr >
@@ -42,7 +83,7 @@ function GeneralTable({TABLE}) {
                             </tr>
                         )
                         
-                    })
+                    }))
                 }
             
            
@@ -72,8 +113,9 @@ function User({img,fullname}) {
 }
 
 function Action ({onClick , title}) {
-    return ( <th className='rounded-xl bg-[#EEEEEE]'>
-        <button onClick={onClick} className="btn btn-ghost btn-xs text-xs   text-night">{title}</button>
+  const [tit , usetit] = useState(title)
+    return ( <th onClick={()=>{usetit("Done!")}} className='rounded-xl bg-[#EEEEEE]'>
+        <button onClick={onClick} className="btn btn-ghost btn-xs text-xs   text-night">{tit}</button>
       </th>)
 }
 

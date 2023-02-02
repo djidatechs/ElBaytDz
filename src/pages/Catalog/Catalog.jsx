@@ -1,17 +1,20 @@
-import React , {useEffect} from 'react';
+import React , {useEffect, useState} from 'react';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import PresentationCover2 from '../../Components/Shared/PresentationCover2';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import AnnonceFilterSpace from '../../Components/Spaces/AnnonceSpace/AnnonceFilterSpace';
 import Paginator from '../../Components/Shared/Paginator';
+import { ElbaytFiltersProvider, useElbaytFilters } from './CatalogContext';
 
 
 function Catalog(props) {
+    
     useEffect(()=>{
         window.scrollTo({top:0 , behavior: 'smooth'})
     },[])
     
     return (
+
         <div className= ''>
             
             <label htmlFor="my-modal-6" className="fixed bottom-9 left-9 z-50 lg:hidden">
@@ -27,7 +30,7 @@ function Catalog(props) {
                     <Sidebar/>
                 </div>
                 <div className="w-2/3 untilLg:w-full ">
-                    <AnnonceFilterSpace />
+                    <AnnonceFilterSpace  DefaultFetch={`http://localhost:8000/realestate?`} />
                 </div>
             </ClientContainter>
         </div>

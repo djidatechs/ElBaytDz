@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import photo from "../../Assets/Logo.svg"
+import { useElbayt } from '../Auth/AuthContext';
 
 function Profile(props) {
+    const [user,setUser] = useElbayt()
+
     useEffect(()=>{
         window.scrollTo({top:0 , behavior: 'smooth'})
+        console.log(user)
     },[])
     return (
         <ClientContainter LayoutBackground='' Custumize=''>
@@ -12,12 +16,12 @@ function Profile(props) {
             <div className='bg-slate-200  w-full md:w-[80%] lg:w-[60%] mx-auto text-center rounded-xl p-12'>
 
                 <h1 className='text-night text-xl font-bold'>Photo de profile</h1>
-                <img className="mask  mask-squircle w-32 m-6 mx-auto" src="https://placeimg.com/160/160/arch" />
+                <img className="mask  mask-squircle w-32 m-6 mx-auto" src={user.picture} />
                 
                 <h1 className='text-night text-xl font-bold'>Mes informations</h1>
-                <Infos line title={"Utilisateur"} value="Djida Issam" />
-                <Infos line tooltip="Clickez pour changer le num de telephone" title={"Telephone"} value="(213) 558 71 31 53" />
-                <Infos line title={"Google"} value="ji_djida@esi.dz" />
+                <Infos line title={"Utilisateur"} value={user.name} />
+                <Infos line title={"Role"} value={user.role} />
+                <Infos line title={"Google"} value={user.email} />
 
             </div>
 

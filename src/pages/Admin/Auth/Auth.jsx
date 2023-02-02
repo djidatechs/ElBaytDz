@@ -1,10 +1,12 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import fakeauth from '../../../FakeAuth/fakeauth';
+import { useElbayt } from '../../Auth/AuthContext';
 
 function Auth(props) {
-    console.log({fakeauth});
-    if (fakeauth === false) return <Navigate to={"/admin/signup"} /> //and clear cache
+    const [user,setUser] = useElbayt()
+
+    if (user.role != "admin") return <Navigate to={"/"} /> //and clear cache
     return (
         <div>
             <Outlet/>
