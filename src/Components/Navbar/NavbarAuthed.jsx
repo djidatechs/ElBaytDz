@@ -25,7 +25,7 @@ function NavbarAuthed(props) {
                 <UserActions/>
                 </div>
                 <div className='lg:hidden '>
-                    <Dropdown/>
+                    <Dropdown />
                 </div>
                 
             </div>

@@ -14,7 +14,7 @@ function Annonces(props) {
     const [TABLE_ , setTABLE_] = useState({ths:[] , rows:[]})
     const navigate = useNavigate()
     useEffect(() => {
-        fetch("http://localhost:8000/realestate?size=50")
+        fetch("http://localhost:8000/realestate?nophotos=yes&size=50")
           .then(res => res.json())
           .then(data => {
             let counter = 0;

@@ -9,6 +9,7 @@ function Navigator(props) {
         <ul className="space-x-9 menu-horizontal px-1 text-lg font-bold text-white">
         <li className=''><Linker styles='hover:text-sun transition duration-100 ease-in' to={"/admin/dashboard"}>Annonce</Linker></li>
         <li className=''><Linker styles='hover:text-sun transition duration-100 ease-in' to={"/admin/dashboard/users"}>utilisateurs</Linker></li>
+        <li className=''><Linker styles='hover:text-sun transition duration-100 ease-in' to={"/admin/dashboard/scrapper"}>Scrapper</Linker></li>
         </ul>
     
     );

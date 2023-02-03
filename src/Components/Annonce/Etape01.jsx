@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import ClientContainter from '../../Layouts/Containers/ClientContainter';
 import { useEffect } from 'react';
+import Map from './Map';
 
 function Etape01 ({setStep , context}) {
     const [annonce , setAnnonce] = context
@@ -61,7 +62,7 @@ function Etape01 ({setStep , context}) {
             wilaya_id,
             user : "",
             commune_id,
-            property_address : log+"T"+lat,
+            property_address : lat+"T"+log,
             photos : []
         }
         console.log(REALESTATE_PARAMS)
@@ -133,11 +134,12 @@ function Etape01 ({setStep , context}) {
                 <option disabled selected value={0}>Commune</option>
                 {communes.length && communes.map(com=><option key={com.id} value={com.id}  >{com.name}</option>)}
             </select>
+            <h1 className='text-3xl text-night font-semibold my-6 '>MAP : coordonnee</h1>
+                <input ref={property_address_ref_log} type="text" placeholder="Lat"  className="input input-bordered md:max-w-xs w-full mb-2" />
+                <input ref={property_address_ref_lat} type="text" placeholder="log"  className="input input-bordered md:max-w-xs w-full mb-2" />
             </div>
-            <div>
-                <h1 className='text-3xl text-night font-semibold my-6 '>MAP : coordonnee</h1>
-                <input ref={property_address_ref_log} type="text" placeholder="Lat"  className="input input-bordered w-full mb-2" />
-                <input ref={property_address_ref_lat} type="text" placeholder="log"  className="input input-bordered w-full mb-2" />
+            <div className= 'h-[700px] w-[500px]'>
+                <Map lat={property_address_ref_lat} log={property_address_ref_log}/>
                 
             </div>
             </div>

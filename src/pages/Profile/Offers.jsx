@@ -21,7 +21,7 @@ function Offers(props) {
                 <button onClick={()=>nav("/annonces/new")} className=' bg-sky text-white font-extrabold rounded-xl p-2 text-lg w-full lg:w-64 h-12'>Publier une annonce</button>
                 </div>
             </div>
-            <AnnoncesSpace DefaultFetch={`http://localhost:8000/realestate?email=${user.email}`}/>
+            <AnnoncesSpace remove  DefaultFetch={`http://localhost:8000/myrealestates?email=${user.email}`}/>
             
         </ClientContainter>
     );

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import AnnonceCard from './AnnonceCard';
+import AnnonceCardSkelaton from './AnnonceCardSkelaton';
 
-function AnnoncesSpace({DefaultFetch="" , }) {
+function AnnoncesSpace({DefaultFetch="" , remove }) {
     const [annonces , setAnnonces] = useState([])
 
     useEffect(()=>{
@@ -14,7 +15,7 @@ function AnnoncesSpace({DefaultFetch="" , }) {
         <div className='sm:grid sm:grid-cols-2 lg:grid-cols-3 py-6 gap-6 space-y-10 sm:space-y-0'>
             {
                 !annonces.length 
-                ? <></>
+                ? <AnnonceCardSkelaton repeat={6}/>
                 : annonces.map(annonce=>(
                 <AnnonceCard
                  
@@ -25,6 +26,8 @@ function AnnoncesSpace({DefaultFetch="" , }) {
                     Type={annonce.property_type}
                     key={annonce.id}
                     id={annonce.id}
+                    Commune={annonce.commune_id}
+                    remove ={remove}
                     
                 />))
             }

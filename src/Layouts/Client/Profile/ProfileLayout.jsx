@@ -8,7 +8,7 @@ function ProfileLayout(props) {
             <ClientContainter Custumize='my-10 '>
             <ul className="space-x-9 text-center lg:mx-64 flex px-1 text-lg font-bold untilMd:hidden ">
                 <li className='w-1/3'><ProfileLinker styles='hover:text-sky transition duration-100 ease-in' to={"/profile/"}>Détails de l'utilisateur</ProfileLinker></li>
-                <li className='w-1/3'><ProfileLinker styles='hover:text-sky transition duration-100 ease-in' to={"/profile/favoris"}>Liste de favoris</ProfileLinker></li>
+                <li className='w-1/3'><ProfileLinker styles='hover:text-sky transition duration-100 ease-in' to={"/profile/favoris"}>Liste des messages</ProfileLinker></li>
                 <li className='w-1/3'><ProfileLinker styles='hover:text-sky transition duration-100 ease-in' to={"/profile/offers"}>Mes offres</ProfileLinker></li>
             </ul>
             </ClientContainter>

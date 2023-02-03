@@ -11,8 +11,8 @@ function Dropdown(props) {
             </label>
             <ul tabIndex={0} className="menu menu-compact  dropdown-content   mt-3 p-2 shadow bg-night text-white rounded-box w-52">
             <div className="divider text-white bg-sky rounded-xl mx-2 p-4">Admin</div>
-                <li><Link to={"/"}>Annonces</Link></li>
-                <li><Link to={"/annonces"}>Utilisateurs</Link></li>
+                <li><Link to={"/admin/dashboard"}>Annonces list</Link></li>
+                <li><Link to={"/admin/dashboard/users"}>Utilisateurs</Link></li>
                 <div className="divider text-white bg-sky rounded-xl mx-2 p-4">Menu</div>
                 <li><Link to={"/"}>Home</Link></li>
                 <li><Link to={"/annonces"}>Annonces</Link></li>

@@ -15,7 +15,8 @@ function EtapeCbn({setStep , context}) {
     const navigate = useNavigate()
     
     useEffect(()=>{
-        console.log(JSON.stringify(annonce))
+        console.log(annonce)
+        console.log(annonce.photos[0].split(",")[1])
         setAnnonce (
             current=>{
                 current.user= user.email
@@ -42,8 +43,9 @@ function EtapeCbn({setStep , context}) {
         <ClientContainter>
             <div className='max-w-96 text-center'>
                 <div className="md:grid grid-cols-3 gap-6 untilMd:space-y-10 py-10">
-                <div></div>
+                <div onClick={console.log(annonce)}>DJIDAISSAM</div>
                 <AnnonceCard
+                Image={annonce.photos[0]}
                 Category={annonce.category}
                 Desc={annonce.description}
                 Price={annonce.price}

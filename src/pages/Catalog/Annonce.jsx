@@ -7,10 +7,14 @@ import FavHeart from '../../Assets/FavHeart.svg'
 import DescIcon from '../../Assets/DescIcon.svg'
 import ContactAnnoncer from '../../Components/Annonce/ContactAnnoncer';
 import { useParams } from 'react-router-dom';
+import Map from '../../Components/Annonce/Map';
+import CategoryMatrixFr from '../../Assets/js/CategoryMatrix';
 
 function Catalog(props) {
     const [annonce , setAnnonce] = useState(null);
     const {annonceId} = useParams();
+    const [loading , setLoading] = useState(true);
+    const [map , setMap] = useState({lat:0,log:0})
     const [place, setPlace]= useState(['','']);
     const [loaded , setLoaded] = useState(false);
 
@@ -19,7 +23,15 @@ function Catalog(props) {
         window.scrollTo({top:0 , behavior: 'smooth'})
         fetch(`http://localhost:8000/realestate/${annonceId}`)
         .then(response => response.json())
-        .then(data => {setAnnonce(data);setLoaded(current=>!current)})
+        .then(data => {
+            setAnnonce(data);
+            setMap({
+                lat:data.property_address.split('T')[0],
+                log:data.property_address.split('T')[1],
+            });
+            setLoading(false);
+            setLoaded(current=>!current)
+        })
         console.log(annonce)
     },[])
 
@@ -34,6 +46,18 @@ function Catalog(props) {
 
     },[loaded])
 
+    if (loading) return (
+        <>
+            <BreadCrump text={"Annonces ❯ "+annonceId}/>  {/* Client contained */}
+            <ClientContainter>
+                <div className='text-center w-full text-night font-bold text-2xl '>Attendez svp ...</div>
+                <div className='md:grid grid-cols-2 gap-10 p-10 mt-10'>
+                    <div className='bg-night opacity-50 animate-pulse h-[90vh]'></div>
+                    <div className='bg-sky opacity-50 animate-pulse h-[90vh]'></div>
+                </div>
+            </ClientContainter>
+        </>
+    )
     if (annonce == null ) return <BreadCrump text={"Annonces ❯ "}/> 
     return (
         
@@ -44,6 +68,7 @@ function Catalog(props) {
                     <div className='w-full lg:w-7/12 '>
                         <div className=' mt-8 space-y-3'>
                             <h1 className=' text-left font-bold text-2xl text-night '>{annonce.property_type} </h1>
+                            <h1 className=' text-left font-bold text-2xl text-sky '>Categorie : {CategoryMatrixFr(annonce.category)} </h1>
                             <h1 className=' text-left font-bold text-2xl text-sun '>{annonce.price} Da </h1>
                             <h1 className=' text-left font-bold text-2xl text-slate-700 '> {place[0]} | {place[1]} </h1>
                             <div className='space-x-3'>
@@ -54,7 +79,7 @@ function Catalog(props) {
                                 <h2 className='font-bold text-2xl inline text-night'>Ajouter à vos favoris</h2>
                             </div>
                             <div className='lg:mr-8'>
-                                <Caroussel/>
+                                <Caroussel photos={annonce?.encoded_photos ||[] } />
                             </div>
 
                            
@@ -67,11 +92,14 @@ function Catalog(props) {
                                     
                                     </article>
                             </div>
+                            <div className='space-x-3 lg:mr-8 h-[300px]'>
+                                <Map lat={{current:{}}} log={{current:{}}} set={{lat:map.lat,lng:map.log}} />
+                            </div>
                         </div>
                     </div>
                     <div className='w-full lg:w-5/12 '>
                         <div className='mt-8'>
-                            <ContactAnnoncer/>
+                            <ContactAnnoncer realestate_id={annonceId}  />
                         </div>
                     </div>
                 </div>
