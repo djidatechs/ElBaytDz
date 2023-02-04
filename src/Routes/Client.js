@@ -15,6 +15,7 @@ import ProfileLayout from '../Layouts/Client/Profile/ProfileLayout';
 import Favoris from '../pages/Profile/Favoris';
 import Offers from '../pages/Profile/Offers';
 import { ElbaytFiltersProvider } from '../pages/Catalog/CatalogContext';
+import Swagger from '../pages/General/Swagger';
 
 
 
@@ -23,6 +24,7 @@ function Client(props) {
     return (
        <Routes>
         <Route path="signup" element={<Signup/>} />
+        <Route path='docs' element={<Swagger/>}/>
         <Route  element={<ClientLayout/>}>
 
             <Route index element={<Home />} />

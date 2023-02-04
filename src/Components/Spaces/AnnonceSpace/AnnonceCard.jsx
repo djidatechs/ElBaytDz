@@ -15,11 +15,11 @@ function AnnonceCard({ key="" , remove,Category , Type , Surface , Desc , Price 
             setImage([{data:Image}])
         }
         else{
-            fetch(`http://localhost:8000/photos_realestate?realestate=${id}&onlyone=y`)
+            fetch(`https://elbayt-backend.onrender.com/photos_realestate?realestate=${id}&onlyone=y`)
             .then(res=>res.json())
             .then(data=>setImage(data))
         }
-        fetch(`http://localhost:8000/wilayascommune?communeID=${Commune}`)
+        fetch(`https://elbayt-backend.onrender.com/wilayascommune?communeID=${Commune}`)
         .then(res=>res.json())
         .then(data=>set_wilaya_commune({wilaya: data.wilaya+" | " , commune:data.commune+" | " }))
 
@@ -27,7 +27,7 @@ function AnnonceCard({ key="" , remove,Category , Type , Surface , Desc , Price 
     const removeFunc= () =>{
         if (ref_.current?.className)
             ref_.current.className = "hidden"
-        const response = axios.delete("http://localhost:8000/realestate/"+id+"/remove")
+        const response = axios.delete("https://elbayt-backend.onrender.com/realestate/"+id+"/remove")
     } 
     return (
 

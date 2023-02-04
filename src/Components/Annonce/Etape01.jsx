@@ -17,14 +17,14 @@ function Etape01 ({setStep , context}) {
 
     const getCommunes = () =>{
         const wilaya_id = wilaya_id_ref.current.value
-        fetch("http://localhost:8000/communes?wilaya="+wilaya_id)
+        fetch("https://elbayt-backend.onrender.com/communes?wilaya="+wilaya_id)
         .then(res=>res.json())
         .then(data=>{setCommunes(data.length ? data : [])})
     }
     
     useEffect(()=>{window.scrollTo({top:0 , behavior: 'smooth'})},[])
     useEffect(()=>{
-        fetch("http://localhost:8000/wilayas/all")
+        fetch("https://elbayt-backend.onrender.com/wilayas/all")
         .then(res=>res.json())
         .then(data=>setWilayas(data))
     },[])
@@ -116,7 +116,7 @@ function Etape01 ({setStep , context}) {
         <h1 className='text-3xl text-night font-semibold my-6 '>Type de bien</h1>
 
         <div className='md:grid grid-cols-2 xl:grid-cols-3 gap-12  md:w-2/3  '>
-        <input ref={property_type_ref} type="text" placeholder="Type"  className="input input-bordered w-full" />
+        <input ref={property_type_ref} type="text" placeholder="Type"  className="input selenium_type input-bordered w-full" />
         
         </div>
 
@@ -124,19 +124,19 @@ function Etape01 ({setStep , context}) {
 
         <div className='md:grid grid-cols-2 untilMd:space-y-20'>
             <div className='space-y-10'>
-            <select ref={wilaya_id_ref} onChange={getCommunes}  className="select select-bordered block w-full md:max-w-xs">
+            <select ref={wilaya_id_ref} onChange={getCommunes}  className="select selenium_wilaya select-bordered block w-full md:max-w-xs">
                 <option disabled selected value={0}>Wilaya</option>
                 {
                     wilayas.map(wil=><option key={wil.id} value={wil.id}  >{wil.name}</option>)
                 }
             </select>
-            <select ref={commune_id_ref} className="select select-bordered block w-full md:max-w-xs">
+            <select ref={commune_id_ref} className="select selenium_commune select-bordered block w-full md:max-w-xs">
                 <option disabled selected value={0}>Commune</option>
                 {communes.length && communes.map(com=><option key={com.id} value={com.id}  >{com.name}</option>)}
             </select>
             <h1 className='text-3xl text-night font-semibold my-6 '>MAP : coordonnee</h1>
-                <input ref={property_address_ref_log} type="text" placeholder="Lat"  className="input input-bordered md:max-w-xs w-full mb-2" />
-                <input ref={property_address_ref_lat} type="text" placeholder="log"  className="input input-bordered md:max-w-xs w-full mb-2" />
+                <input ref={property_address_ref_log} type="text" placeholder="Lat"  className="input selenium_lat input-bordered md:max-w-xs w-full mb-2" />
+                <input ref={property_address_ref_lat} type="text" placeholder="log"  className="input selenium_lng input-bordered md:max-w-xs w-full mb-2" />
             </div>
             <div className= 'h-[700px] w-[500px]'>
                 <Map lat={property_address_ref_lat} log={property_address_ref_log}/>
@@ -144,7 +144,7 @@ function Etape01 ({setStep , context}) {
             </div>
             </div>
 
-        <button className='py-2 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right mt-10' onClick={setContext}>Suivant</button>
+        <button className='py-2 selenium_btn1 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right mt-10' onClick={setContext}>Suivant</button>
 
         
         </div>

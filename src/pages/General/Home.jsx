@@ -30,7 +30,7 @@ function Home(props) {
 
             <ClientContainter LayoutBackground='z-0 bg-[#D9D9D9]' Custumize=''>
                 <Inputer/>
-                <AnnoncesSpace DefaultFetch='http://localhost:8000/realestate?size=6&nophoto=yes'/>
+                <AnnoncesSpace DefaultFetch='https://elbayt-backend.onrender.com/realestate?size=6&nophoto=yes'/>
             </ClientContainter>
 
             <ClientContainter LayoutBackground='z-0' Custumize='py-6 text-center'>

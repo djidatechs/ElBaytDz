@@ -18,7 +18,7 @@ function Signup() {
     const [transformater , setTransformater] = useState(false)
     const handleLogin = () => {
         localStorage.removeItem("access_token")
-        window.location.href ="https://accounts.google.com/o/oauth2/v2/auth?scope=email+profile+https://www.googleapis.com/auth/userinfo.profile&redirect_uri=http://localhost:3000/signup&response_type=code&client_id=577253181136-vsp9pem3lhc62r9oajr579c9p1ihpokr.apps.googleusercontent.com"
+        window.location.href ="https://accounts.google.com/o/oauth2/v2/auth?scope=email+profile+https://www.googleapis.com/auth/userinfo.profile&redirect_uri=https://elbaytdz.netlify.app/signup&response_type=code&client_id=577253181136-vsp9pem3lhc62r9oajr579c9p1ihpokr.apps.googleusercontent.com"
   };
 
     useEffect(() => {
@@ -34,7 +34,7 @@ function Signup() {
             }
             if (code) setTransformater(true)
     
-          const response = await axios.post("http://localhost:8000/google-oauth", {code, redirect_uri: "http://localhost:3000/signup",});
+          const response = await axios.post("https://elbayt-backend.onrender.com/google-oauth", {code, redirect_uri: "https://elbaytdz.netlify.app/signup",});
           const accessToken = response.data.access_token;
           const userinfo =  response.data.user_info;
           if (userinfo.id != undefined) setUser(userinfo)

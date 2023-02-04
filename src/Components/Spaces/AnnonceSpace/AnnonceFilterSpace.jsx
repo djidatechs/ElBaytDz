@@ -76,7 +76,7 @@ export default AnnonceFilterSpace;
 
 
 
-function CategoryMatrix  (number)  {
+export function CategoryMatrix  (number)  {
     
     let ret = ""
     number = number.toString()

@@ -8,10 +8,10 @@ function Listmessages(props) {
     const {email} = useElbayt()[0]
 
     useEffect(() => {
-        fetch(`http://localhost:8000/me?email=${email}`)
+        fetch(`https://elbayt-backend.onrender.com/me?email=${email}`)
         .then(res => res.json())
         .then(data => {
-            fetch(`http://localhost:8000/messages?sender_id=${data.id}`)
+            fetch(`https://elbayt-backend.onrender.com/messages?sender_id=${data.id}`)
             .then(res => res.json())
             .then(msgs => {
                 setMessages(msgs);

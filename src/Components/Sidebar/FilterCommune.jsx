@@ -14,7 +14,7 @@ function FilterCommune(props) {
     useEffect(()=>{
 
         if (wilaya.length){
-        fetch("http://localhost:8000/communes?wilaya="+wilaya)
+        fetch("https://elbayt-backend.onrender.com/communes?wilaya="+wilaya)
         .then(res=>res.json())
         .then(data=>{setCommunes(data.length ? data : [])})
         } 

@@ -29,7 +29,7 @@ function EtapeCbn({setStep , context}) {
         
         if (validator){
             const AXIOSPOST = async() => {
-                const respones = await axios.post("http://localhost:8000/realestate/", {...annonce})
+                const respones = await axios.post("https://elbayt-backend.onrender.com/realestate/", {...annonce})
                 console.log(respones.data)
                 if (respones.data.id)
                 navigate("/annonces/"+respones.data.id)
@@ -58,7 +58,7 @@ function EtapeCbn({setStep , context}) {
                 <div></div>
                 </div>
             </div>
-            <button className={`py-2 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right mt-10 ${validator ? "animate-pulse" : ""}`} onClick={()=>{setValidator(true)}}>{
+            <button className={`py-2 selenium_btn4 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right mt-10 ${validator ? "animate-pulse" : ""}`} onClick={()=>{setValidator(true)}}>{
                 !validator ? "Creer annonce" : "Creation ..."
             }</button>
         </ClientContainter>

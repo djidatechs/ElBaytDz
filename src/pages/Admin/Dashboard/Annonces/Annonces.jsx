@@ -14,13 +14,13 @@ function Annonces(props) {
     const [TABLE_ , setTABLE_] = useState({ths:[] , rows:[]})
     const navigate = useNavigate()
     useEffect(() => {
-        fetch("http://localhost:8000/realestate?nophotos=yes&size=50")
+        fetch("https://elbayt-backend.onrender.com/realestate?nophotos=yes&size=50")
           .then(res => res.json())
           .then(data => {
             let counter = 0;
             data.map(elem => {
               setTimeout(() => {
-                fetch("http://localhost:8000/users/" + elem.user_id)
+                fetch("https://elbayt-backend.onrender.com/users/" + elem.user_id)
                   .then(res => res.json())
                   .then(user => {
                     elem.user = user.email;

@@ -21,7 +21,7 @@ function Catalog(props) {
 
     useEffect(()=>{
         window.scrollTo({top:0 , behavior: 'smooth'})
-        fetch(`http://localhost:8000/realestate/${annonceId}`)
+        fetch(`https://elbayt-backend.onrender.com/realestate/${annonceId}`)
         .then(response => response.json())
         .then(data => {
             setAnnonce(data);
@@ -37,7 +37,7 @@ function Catalog(props) {
 
     useEffect(()=>{
         if (loaded) {
-            fetch(`http://localhost:8000/wilayascommune?communeID=${annonce.commune_id}`)
+            fetch(`https://elbayt-backend.onrender.com/wilayascommune?communeID=${annonce.commune_id}`)
             .then(response => response.json())
             .then(data => setPlace(current=>[ data.wilaya , data.commune  ]))
 

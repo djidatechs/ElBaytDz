@@ -30,7 +30,7 @@ function Catalog(props) {
                     <Sidebar/>
                 </div>
                 <div className="w-2/3 untilLg:w-full ">
-                    <AnnonceFilterSpace  DefaultFetch={`http://localhost:8000/realestate?`} />
+                    <AnnonceFilterSpace  DefaultFetch={`https://elbayt-backend.onrender.com/realestate?`} />
                 </div>
             </ClientContainter>
         </div>

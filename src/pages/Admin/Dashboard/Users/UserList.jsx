@@ -11,13 +11,13 @@ function Annonces(props) {
     const [dataTable , setDataTable] = useState([]);
 
     const addAdming = (id)=> {
-        fetch(`http://localhost:8000/user/toadmin?id=${id}`, {method: 'PUT'})
+        fetch(`https://elbayt-backend.onrender.com/user/toadmin?id=${id}`, {method: 'PUT'})
          .then(response => response.json())
          .then(data => {} );
     }
     
     useEffect(()=>{
-        fetch("http://localhost:8000/users")
+        fetch("https://elbayt-backend.onrender.com/users")
         .then(res=>res.json())
         .then(data=> setDataTable(data) )
     },[])

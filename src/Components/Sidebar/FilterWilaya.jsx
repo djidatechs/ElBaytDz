@@ -13,7 +13,7 @@ function FilterWilaya(props) {
     
     
     useEffect(()=>{
-        fetch("http://localhost:8000/wilayas/all")
+        fetch("https://elbayt-backend.onrender.com/wilayas/all")
         .then(res=>res.json())
         .then(data=>setWilayas(data))
     },[])

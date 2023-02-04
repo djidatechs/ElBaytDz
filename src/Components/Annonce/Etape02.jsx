@@ -74,22 +74,22 @@ function Etape02 ({setStep, context}) {
         <div className='sm:grid grid-cols-2 lg:grid-cols-3 gap-6 md:ml-[100px] lg:ml-[200px] '>
             <div>
                 <h1 className='text-xl text-night font-semibold my-6 '>Surface de bien en metre cube</h1>
-                <input ref={surface_ref} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <input ref={surface_ref} type="text" placeholder="Type here" className="input selenium_surface  input-bordered w-full max-w-xs" />
             </div>
             <div>
                 <h1 className='text-xl text-night font-semibold my-6 '>Prix de bien en dinar algerien</h1>
-                <input ref={price_ref} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <input ref={price_ref} type="text" placeholder="Type here" className="input selenium_price input-bordered w-full max-w-xs" />
             </div>
             <div className='col-span-2'>
                 <h1 className='text-xl text-night font-semibold mt-6 '>Photos de bien</h1>
                 <h2 className='ml-5'>Vous avez besoin de joindre des photos claires pour votre annonce</h2>
                 <h2 className='ml-5'>01 photo en moins</h2>
                 <img src={addpic} alt="" onClick={()=>{img.current.click()}}  className='cursor-pointer'/>
-                <input ref={img} type="file" accept="image/*" multiple="multiple" className='hidden' onChange={(e)=>handleFileChange(e)} />
+                <input ref={img} type="file" accept="image/*" multiple="multiple" className='hidden selenium_images' onChange={(e)=>handleFileChange(e)} />
             </div>
         
         </div>
-       <button className='py-2 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right' onClick={setCOntext}>Suivant</button>
+       <button className='py-2 selenium_btn2 px-10 text-lg font-semibold text-white bg-sky rounded-xl float-right' onClick={setCOntext}>Suivant</button>
         </ClientContainter>
     )}
     
